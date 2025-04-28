@@ -6,6 +6,7 @@ Simple script to automatically rewrite and format a raw transcript (or series of
 
 * Clone the repo, cd into the folder and install the dependencies.
 * Add your OpenRouter API key – the script works well with Deepseek free so you don't need credits.
+* Modify the prompt template if you want.
 
 ## Usage
 
