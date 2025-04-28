@@ -1,0 +1,21 @@
+{
+  "name": "TranscriptKit",
+  "version": "1.0.0",
+  "description": "A tool to convert transcript text files to formatted markdown documents",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "keywords": [
+    "transcription",
+    "markdown",
+    "conversion",
+    "openrouter"
+  ],
+  "author": "Matt Kevan",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "path": "^0.12.7"
+  }
+}
