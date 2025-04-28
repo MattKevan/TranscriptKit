@@ -158,13 +158,21 @@ async function main() {
       
       // Sort files naturally if they have numbers in their names
       processedContents.sort((a, b) => {
-        // Extract numbers from file names if present
-        const aMatch = a.fileName.match(/(\d+)/);
-        const bMatch = b.fileName.match(/(\d+)/);
+        // Extract all numbers from filenames
+        const aMatches = a.fileName.match(/\d+/g);
+        const bMatches = b.fileName.match(/\d+/g);
         
-        if (aMatch && bMatch) {
-          return parseInt(aMatch[0]) - parseInt(bMatch[0]);
+        if (aMatches && bMatches) {
+          // Compare the first number found in each filename
+          const aNum = parseInt(aMatches[0], 10);
+          const bNum = parseInt(bMatches[0], 10);
+          
+          if (!isNaN(aNum) && !isNaN(bNum)) {
+            return aNum - bNum;
+          }
         }
+        
+        // Fall back to alphabetical sorting if no numbers or same numbers
         return a.fileName.localeCompare(b.fileName);
       });
       
